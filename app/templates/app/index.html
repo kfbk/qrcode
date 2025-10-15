@@ -1,0 +1,29 @@
+{% extends "app/base.html" %} {% block content %}
+
+<div>
+    <h1>QRコード作成プログラム</h1>
+    <!-- <p>{{ insert_something }}</p>
+    <p>作成者は<b id='test'>{{ name }}</b>です。</p> -->
+
+    <p>{{ insert_forms|linebreaksbr }}</p>
+    {% if qr %}
+    <img src="data:image/png;base64,{{ qr }}"/>
+    {% endif %}
+    <table>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        <!-- {{ form }}
+        <input type="submit" value="送信"> -->
+        <tr>
+          <td></td>
+          <td>入力フォーム</td>
+        </tr>
+        {{ form.as_table }}
+        <tr>
+          <td></td>
+          <td><input type="submit" value="生成する"></td>
+        </tr>
+    </form>
+    </table>
+</div>
+{% endblock %}
