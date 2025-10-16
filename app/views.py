@@ -4,6 +4,10 @@ import qrcode
 import base64
 from io import BytesIO
 from .forms import TestForm  # 追加
+from django.views.generic import TemplateView
+
+class GoogleView(TemplateView):
+    template_name = "app/google51925de0612ccd11.html"
 
 def index(request):
   # img = qrcode.make('satou')

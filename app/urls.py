@@ -12,5 +12,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('google51925de0612ccd11/', views.GoogleView.as_view(), name='google'),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
